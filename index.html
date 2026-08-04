@@ -204,15 +204,9 @@ attribution: '&copy; <a href="http://www.openstreetmap.org/copyright">OpenStreet
 });
 
 
-const osmHOT = L.tileLayer('https://{s}.tile.openstreetmap.fr/hot/{z}/{x}/{y}.png', {
-    maxZoom: 19,
-    attribution: '© OpenStreetMap contributors, - Kutai Timur'
-	});
-
-
  // Esri World Imagery (Satellite view - No API key required for basic web use)
 const Esri_WorldImagery = L.tileLayer('https://server.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/{z}/{y}/{x}', {
-    attribution: 'Tiles &copy; Esri &mdash; - Kutai Timur'
+    attribution: 'Tiles &copy; Esri - Kutai Timur'
 });
 
 
@@ -225,7 +219,7 @@ layers: [Esri_WorldImagery, gruppasar]
 const baseLayers = {
 
 'OpenStreetMap': osm,
-    'OpenStreetMap.HOT': osmHOT,
+
 	'Satellite': Esri_WorldImagery,
 };
 
