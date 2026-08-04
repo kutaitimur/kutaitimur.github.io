@@ -7,7 +7,7 @@
 
 <title>Peta Populasi Ketersediaan Pangan Kutai Timur</title>
 
-<link rel="shortcut icon" type="image/x-icon" href="icon/favicon.ico" />
+<link rel="shortcut icon" type="image/x-icon" href="icon/Kutai_Timur.png" />
 
     <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY=" crossorigin=""/>
     <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js" integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo=" crossorigin=""></script>
@@ -90,20 +90,7 @@ max-height: 100%;
 			});
 			
 	const PasarIcon = new MarketIcon({iconUrl: 'icon/pasar.png'});	
-		
-<!-- ICON Supermarket
-	const SuperIcon = L.Icon.extend({
-		options: {
-			shadowUrl: 'icon/supermarket.png',
-			iconSize:     [45.3, 34],
-			shadowSize:   [0, 0],
-
-			shadowAnchor: [4, 62],
-			popupAnchor:  [-1, -1]
-		}
-			});
 			
-	const SupermarketIcon = new SuperIcon({iconUrl: 'icon/supermarket.png'});	
 		
 <!-- ICON Warung Sembako
 	const SembakoIcon = L.Icon.extend({
@@ -169,10 +156,45 @@ max-height: 100%;
 
 
 <!-- PASAR
+const gruppasar = L.layerGroup();
+
+
+const PasarIndukKongbeng = L.marker([1.0989178870825653, 116.92521875214139], {icon: PasarIcon}).addTo(gruppasar)
+.bindPopup('<b>Pasar Induk Kongbeng</b><br/>Jl. Ahmad Yani, Makmur Jaya, Kec. Kongbeng, Kabupaten Kutai Timur, Kalimantan Timur 75655<br><br>  <img src="./pasar/PasarIndukKongbeng1.png" style="width:200px"><img src="./pasar/PasarIndukKongbeng2.png" style="width:200px">');
+
+const PasarIndukSangatta = L.marker([0.5176511773040205, 117.5439794863809], {icon: PasarIcon}).addTo(gruppasar)
+.bindPopup('<b>Pasar Induk Sangatta</b><br/>Karangan Seberang, Karangan Hilir, Kec. Karangan, Kabupaten Kutai Timur, Kalimantan Timur 75684<br><br>  <img src="./pasar/PasarIndukSangatta1.png" style="width:200px"> <img src="./pasar/PasarIndukSangatta2.png" style="width:200px"> <img src="./pasar/PasarIndukSangatta3.png" style="width:200px"> <img src="./pasar/PasarIndukSangatta4.png" style="width:200px">');
+
+const PasarSangkulirang = L.marker([0.9881461934343887, 117.98520301534795], {icon: PasarIcon}).addTo(gruppasar)
+.bindPopup('<b>Pasar Sangkulirang</b><br/>Banua Baru, Kec. Sangkulirang, Kabupaten Kutai Timur, Kalimantan Timur 75684<br><br>  <img src="./pasar/PasarSangkulirang1.png" style="width:200px"> <img src="./pasar/PasarSangkulirang2.png" style="width:200px">  ');
+
+const PasarBeringin = L.marker([0.37685808401178994, 117.51554176840725], {icon: PasarIcon}).addTo(gruppasar)
+.bindPopup('<b>Pasar Beringin</b><br/>Sangkima, Kec. Sangatta Sel., Kabupaten Kutai Timur, Kalimantan Timur 75683<br><br>  <img src="./pasar/PasarBeringin.png" style="width:200px">  ');
+
+const PasarLandasan = L.marker([1.0873613098790442, 116.89609064283472], {icon: PasarIcon}).addTo(gruppasar)
+.bindPopup('<b>Pasar Landasan</b><br/>Marga Mulia, Kec. Kongbeng, Kabupaten Kutai Timur, Kalimantan Timur 75655<br><br>  <img src="./pasar/PasarLandasan.png" style="width:200px">  ');
+
+const PasarKarangan = L.marker([1.3376623009427202, 117.65382795342171], {icon: PasarIcon}).addTo(gruppasar)
+.bindPopup('<b>Pasar Karangan</b><br/>Karangan Seberang, Karangan Hilir, Kec. Karangan, Kabupaten Kutai Timur, Kalimantan Timur 75684<br><br>  <img src="./pasar/PasarKarangan.png" style="width:200px">  ');
+
+const PasarBengalon = L.marker([0.7487872818877312, 117.57391678032583], {icon: PasarIcon}).addTo(gruppasar)
+.bindPopup('<b>Pasar Bengalon</b><br/>Sepaso, Kec. Bengalon, Kabupaten Kutai Timur, Kalimantan Timur 75618<br><br>  <img src="./pasar/PasarBengalon.png" style="width:200px">  ');
+
+const PasarSangattaLama = L.marker([0.4825537658135887, 117.53271397497387], {icon: PasarIcon}).addTo(gruppasar)
+.bindPopup('<b>Pasar Sangatta Lama (Pasar Sangatta Seberang)</b><br/>Jl. Pasar Raya, Sangatta Sel., Kec. Sangatta Sel., Kabupaten Kutai Timur, Kalimantan Timur 75683<br><br>  <img src="./pasar/PasarSangattaLama1.png" style="width:200px"> <img src="./pasar/PasarSangattaLama2.png" style="width:200px"> <img src="./pasar/PasarSangattaLama3.png" style="width:200px">  ');
+
+const PasarIkanSangattaSelatan = L.marker([0.4829054172656772, 117.53341762697889], {icon: PasarIcon}).addTo(gruppasar)
+.bindPopup('<b>Pasar Ikan Sangatta Selatan</b><br/>Sangatta Sel., Kec. Sangatta Sel., Kabupaten Kutai Timur, Kalimantan Timur 75683<br><br>  <img src="./pasar/PasarIkanSangattaSelatan1.png" style="width:200px"> <img src="./pasar/PasarIkanSangattaSelatan2.png" style="width:200px">   ');
+
+const PasarLamaBengalon = L.marker([0.7430278826466219, 117.58481739670735], {icon: PasarIcon}).addTo(gruppasar)
+.bindPopup('<b>Pasar Lama Bengalon</b><br/>Sepaso Selatan, Bengalon, Kabupaten Kutai Timur, Kalimantan Timur 75618<br><br>  <img src="./pasar/PasarLamaBengalon1.png" style="width:200px"> <img src="./pasar/PasarLamaBengalon2.png" style="width:200px">   ');
+
+const PasarSEPASOBENGALON = L.marker([0.7440939129554927, 117.58427617367721], {icon: PasarIcon}).addTo(gruppasar)
+.bindPopup('<b>Pasar SEPASO BENGALON</b><br/>Sepaso Selatan, Bengalon, Kabupaten Kutai Timur, Kalimantan Timur 75618<br><br>  <img src="./pasar/PasarSEPASOBENGALON.png" style="width:200px">   ');
 
 
 
-	
+
 
 
 
@@ -197,7 +219,7 @@ const Esri_WorldImagery = L.tileLayer('https://server.arcgisonline.com/ArcGIS/re
 const map = L.map('map', {
 center: [0.8394143551511812, 117.39444415999685],
 zoom: 9,
-layers: [Esri_WorldImagery]
+layers: [Esri_WorldImagery, gruppasar]
 });
 
 const baseLayers = {
@@ -208,7 +230,14 @@ const baseLayers = {
 };
 
 
-const layerControl = L.control.layers(baseLayers).addTo(map);
+
+const overlays = {
+	'Pasar': gruppasar
+};
+
+
+
+const layerControl = L.control.layers(baseLayers, overlays).addTo(map);
 
 <!-- ------------------------------------------------------------------------------------------------- 
 <!-- CURRENT LOCATION
@@ -370,6 +399,9 @@ const IndomaretPorosSangattaWahau = L.marker([1.0617579154563046, 116.8424831864
 const IndomaretPahlawanKombeng = L.marker([1.092870686065309, 116.91011432953482], {icon: IndomaretIcons})
 .bindPopup('<b>Indomaret Pahlawan Kombeng</b><br/>Sidomulyo, Kec. Kongbeng, Kabupaten Kutai Timur, Kalimantan Timur<br><br> <img src="./supermarket/IndomaretPahlawanKombeng.png" style="width:200px"> ');
 
+const IndomaretManunggalJaya = L.marker([0.7024951190824228, 117.29291086283621], {icon: IndomaretIcons})
+.bindPopup('<b>Indomaret Manunggal Jaya</b><br/>Manunggal Jaya, Kec. Rantau Pulung, Kabupaten Kutai Timur, Kalimantan Timur<br><br> <img src="./supermarket/IndomaretManunggalJaya.png" style="width:200px"> ');
+
 <!-- Indomaret Fresh
 const IndomaretFreshKabo = L.marker([0.5334713098985053, 117.51935539795659], {icon: IndomaretFreshIcons})
 .bindPopup('<b>Indomaret Fresh</b><br/>Jl. Kabo Jaya, Swarga Bara, Kec. Sangatta Utara, Kabupaten Kutai Timur, Kalimantan Timur 75683<br><br> <img src="./supermarket/IndomaretFreshKabo.png" style="width:200px"> ');
@@ -405,7 +437,7 @@ const AlfamidiYosSudarsoII = L.marker([0.5111930223924571, 117.53651680496687], 
 const AlfamidiWanasari = L.marker([1.0926183843749482, 116.89798654562681], {icon: AlfamidiIcons})
 .bindPopup('<b>Alfamidi Wanasari (SG1S)</b><br/>Marga Mulia, Kombeng, Kabupaten Kutai Timur, Kalimantan Timur 75655<br><br> <img src="./supermarket/AlfamidiWanasari.png" style="width:200px"> ');
 
-const modern = L.layerGroup([IndomaretAWSSangatta, IndomaretMargoSantosoII, IndomaretMargo, IndomaretYosSudarsoII, IndomaretInpres, IndomaretKaryaEtam, IndomaretAPTPranoto22, IndomartSimpang3Bengalon, IndomaretMiauBaru122, IndomaretSP3Wahau, IndomaretPorosKombeng, IndomaretAsmawieSy, IndomaretWahau, IndomaretAhmadYani, IndomaretMulawarman, IndomaretYosSudarsoI, IndomaretYosSudarsoITUWR, IndomaretDiponegoro, IndomaretIAMuis, IndomaretAPTPranoto, IndomaretYosSudarso2, IndomaretFreshYosSudarsoIII, IndomaretYosSudarsoIV, IndomaretMunthe, IndomaretYosSudarsoIVT53S, IndomaretFreshKabo, IndomartSangkima, IndomaretCiptaGraha, IndomaretBukitMakmurKaliorang, IndomaretSimpang4Kaliorang, IndomaretJuandaSP3Kaubun, IndomaretJuanda1Kaubun, IndomaretAptPranoto58, IndomaretPorosBontangSangattaKM2, IndomaretKabo, IndomaretSwargaBara, IndomaretMulawarmanSepaso, AlfamidiWahauBaru, AlfamidiBengalon, AlfamidiDiponegoro, AlfamidiYosSudarso3Sangata, AlfamidiSangattaUtara, AlfamidiYosSudarso4Sangatta, AlfamidiSwargaBara, AlfamidiDayung, AlfamidiYosSudarsoII, AlfamidiWanasari, IndomaretPorosSangattaWahau, IndomaretPahlawanKombeng, ]);
+const modern = L.layerGroup([IndomaretAWSSangatta, IndomaretMargoSantosoII, IndomaretMargo, IndomaretYosSudarsoII, IndomaretInpres, IndomaretKaryaEtam, IndomaretAPTPranoto22, IndomartSimpang3Bengalon, IndomaretMiauBaru122, IndomaretSP3Wahau, IndomaretPorosKombeng, IndomaretAsmawieSy, IndomaretWahau, IndomaretAhmadYani, IndomaretMulawarman, IndomaretYosSudarsoI, IndomaretYosSudarsoITUWR, IndomaretDiponegoro, IndomaretIAMuis, IndomaretAPTPranoto, IndomaretYosSudarso2, IndomaretFreshYosSudarsoIII, IndomaretYosSudarsoIV, IndomaretMunthe, IndomaretYosSudarsoIVT53S, IndomaretFreshKabo, IndomartSangkima, IndomaretCiptaGraha, IndomaretBukitMakmurKaliorang, IndomaretSimpang4Kaliorang, IndomaretJuandaSP3Kaubun, IndomaretJuanda1Kaubun, IndomaretAptPranoto58, IndomaretPorosBontangSangattaKM2, IndomaretKabo, IndomaretSwargaBara, IndomaretMulawarmanSepaso, AlfamidiWahauBaru, AlfamidiBengalon, AlfamidiDiponegoro, AlfamidiYosSudarso3Sangata, AlfamidiSangattaUtara, AlfamidiYosSudarso4Sangatta, AlfamidiSwargaBara, AlfamidiDayung, AlfamidiYosSudarsoII, AlfamidiWanasari, IndomaretPorosSangattaWahau, IndomaretPahlawanKombeng, IndomaretManunggalJaya, ]);
 layerControl.addOverlay(modern, 'Super Market');
 
 
@@ -511,7 +543,7 @@ const TokoPanoramaIndah = L.marker([0.5418000677781901, 117.51273312449027], {ic
 .bindPopup('<b>Toko Panorama Indah</b><br/>Jl. Anyelir No.3, Swarga Bara, Kec. Sangatta Utara, Kabupaten Kutai Timur, Kalimantan Timur 75683<br>085184854848<br><br> <img src="./pedagang/TokoPanoramaIndah.png" style="width:200px"> ');
 
 const TokoMerdeka1 = L.marker([0.4847397703402228, 117.5305563038513], {icon: WarungSembakoIcon})
-.bindPopup('<b>Toko Merdeka 1</b><br/>Jl. Pusaka, Kec. Sangatta Sel., Kabupaten Kutai Timur, Kalimantan Timur 75683<br><br> <img src="./pedagang/TokoMerdeka1.png" style="width:200px"> ');
+.bindPopup('<b>Toko Merdeka 1</b><br/>Jl. Pusaka, Kec. Sangatta Utara, Kabupaten Kutai Timur, Kalimantan Timur 75683<br><br> <img src="./pedagang/TokoMerdeka1.png" style="width:200px"> ');
 
 const TokoSembakoSayurZikri = L.marker([0.4855582560020709, 117.53025981758968], {icon: WarungSembakoIcon})
 .bindPopup('<b>Toko Sembako & Sayur Zikri</b><br/>Sangatta Utara, Kabupaten Kutai Timur, Kalimantan Timur 75683<br><br> <img src="./pedagang/TokoSembakoSayurZikri1.png" style="width:200px"><img src="./pedagang/TokoSembakoSayurZikri2.png" style="width:200px"> ');
@@ -658,16 +690,16 @@ const TokoChaka = L.marker([0.38292115112545483, 117.51441388438604], {icon: War
 .bindPopup('<b>Toko Chaka</b><br/>Jl. Minyak, Sangkima, Kec. Sangatta Sel., Kabupaten Kutai Timur, Kalimantan Timur 75683<br><br> <img src="./pedagang/TokoChaka.png" style="width:200px"> ');
 
 const TokoNurHadi = L.marker([0.477676307839722, 117.54270243372302], {icon: WarungSembakoIcon})
-.bindPopup('<b>Toko Nur Hadi</b><br/>Sangatta Sel., Kec. Sangatta Sel., Kabupaten Kutai Timur, Kalimantan Timur 75683<br>085250259035<br><br> <img src="./pedagang/TokoNurHadi.png" style="width:200px"> ');
+.bindPopup('<b>Toko Nur Hadi</b><br/>Kec. Sangatta Sel., Kabupaten Kutai Timur, Kalimantan Timur 75683<br>085250259035<br><br> <img src="./pedagang/TokoNurHadi.png" style="width:200px"> ');
 
 const TokoBagusCell = L.marker([0.47807017959383447, 117.54181102777927], {icon: WarungSembakoIcon})
-.bindPopup('<b>Toko Bagus Cell</b><br/>Sangatta Sel., Kec. Sangatta Sel., Kabupaten Kutai Timur, Kalimantan Timur 75683<br>082155111101<br><br> <img src="./pedagang/TokoBagusCell.png" style="width:200px"> ');
+.bindPopup('<b>Toko Bagus Cell</b><br/>Kec. Sangatta Sel., Kabupaten Kutai Timur, Kalimantan Timur 75683<br>082155111101<br><br> <img src="./pedagang/TokoBagusCell.png" style="width:200px"> ');
 
 const TokoIQBAL = L.marker([0.4820697358885967, 117.53568778466965], {icon: WarungSembakoIcon})
 .bindPopup('<b>TOKO IQBAL</b><br/>Mulawarman, Sangatta Selatan, Kabupaten Kutai Timur, Kalimantan Timur 75683<br>085654141138<br><br> <img src="./pedagang/TokoIQBAL.png" style="width:200px"> ');
 
 const TokoAWANGJAYARAKA = L.marker([0.480865294607064, 117.53891311765523], {icon: WarungSembakoIcon})
-.bindPopup('<b>TOKO AWANG JAYA RAKA</b><br/>Jl. Rosihan Achmad No.61, Kampung Tengah, Sangatta Sel., Kec. Sangatta Utara, Kabupaten Kutai Timur, Kalimantan Timur 75683<br><br> <img src="./pedagang/TokoAWANGJAYARAKA1.png" style="width:200px"> <img src="./pedagang/TokoAWANGJAYARAKA2.png" style="width:200px"> ');
+.bindPopup('<b>TOKO AWANG JAYA RAKA</b><br/>Jl. Rosihan Achmad No.61, Kampung Tengah, Kec. Sangatta Sel., Kabupaten Kutai Timur, Kalimantan Timur 75683<br><br> <img src="./pedagang/TokoAWANGJAYARAKA1.png" style="width:200px"> <img src="./pedagang/TokoAWANGJAYARAKA2.png" style="width:200px"> ');
 
 const SRCMajuJaya = L.marker([1.044440201057999, 116.84564514101645], {icon: WarungSembakoIcon})
 .bindPopup('<b>SRC Maju Jaya</b><br/>Sidomulyo, Kec. Kongbeng, Kabupaten Kutai Timur, Kalimantan Timur 75655<br><br> <img src="./pedagang/SRCMajuJaya.png" style="width:200px">  ');
@@ -726,23 +758,237 @@ const AgenTelurBlitarBerkahBersama = L.marker([1.0657866740964672, 117.853439070
 const TokoDuaPutra = L.marker([1.0826070914550427, 117.85419159866157], {icon: WarungSembakoIcon})
 .bindPopup('<b>Toko Dua Putra</b><br/>Bumi Etam, Kec. Kaubun, Kabupaten Kutai Timur, Kalimantan Timur 75619<br>082255331770<br><br> <img src="./pedagang/TokoDuaPutra1.png" style="width:200px"> <img src="./pedagang/TokoDuaPutra2.png" style="width:200px"> ');
 
+const TokoAmelMandiri = L.marker([0.3139489054217387, 116.6237071296847], {icon: WarungSembakoIcon})
+.bindPopup('<b>Toko Amel Mandiri</b><br/>Senyiur, Kec. Muara Ancalong, Kabupaten Kutai Timur, Kalimantan Timur 75656<br><br> <img src="./pedagang/TokoAmelMandiri.png" style="width:200px"> ');
+
+const YulianaBriLink = L.marker([0.3129905641833125, 116.62427054592459], {icon: WarungSembakoIcon})
+.bindPopup('<b>Toko Zacky RT 5/Yuliana BriLink</b><br/>Senyiur, Kec. Muara Ancalong, Kabupaten Kutai Timur, Kalimantan Timur 75656<br>085250129213<br><br> <img src="./pedagang/YulianaBriLink.png" style="width:200px"> ');
+
+const TokoRahmaAzzam = L.marker([0.3117430589153634, 116.623611251549], {icon: WarungSembakoIcon})
+.bindPopup('<b>Toko Rahma Azzam</b><br/>Jl. Pendidikan, Senyiur, Kec. Muara Ancalong, Kabupaten Kutai Timur, Kalimantan Timur 75656<br><br> <img src="./pedagang/TokoRahmaAzzam.png" style="width:200px"> ');
+
+const TokoSembakoNurAnugrah = L.marker([0.315040480523874, 116.61799677067182], {icon: WarungSembakoIcon})
+.bindPopup('<b>Toko Sembako Nur Anugrah</b><br/>RT.001, Senyiur, Kec. Muara Ancalong, Kabupaten Kutai Timur, Kalimantan Timur 75656<br><br> <img src="./pedagang/TokoSembakoNurAnugrah.png" style="width:200px"> ');
+
+const TokoBundaDijah = L.marker([0.3124137722996725, 116.62478041049285], {icon: WarungSembakoIcon})
+.bindPopup('<b>Toko Bunda Dijah</b><br/>RT 4 (Dekat Masjid), Senyiur, Kec. Muara Ancalong, Kabupaten Kutai Timur, Kalimantan Timur 75666<br><br> <img src="./pedagang/TokoBundaDijah1.png" style="width:200px"> <img src="./pedagang/TokoBundaDijah2.png" style="width:200px"> <img src="./pedagang/TokoBundaDijah3.png" style="width:200px"> <img src="./pedagang/TokoBundaDijah4.png" style="width:200px"> <img src="./pedagang/TokoBundaDijah5.png" style="width:200px">');
+
+const TokoSejahtera = L.marker([0.4321297633862462, 116.67858114167261], {icon: WarungSembakoIcon})
+.bindPopup('<b>Toko Sejahtera</b><br/>Jl. Pelita No.RT.02, Kelinjau Ulu, Kec. Muara Ancalong, Kabupaten Kutai Timur, Kalimantan Timur 75556<br><br> <img src="./pedagang/TokoSejahtera.png" style="width:200px"> ');
+
+const TOKOBERKATABADI = L.marker([0.4442792613752197, 116.67728960283722], {icon: WarungSembakoIcon})
+.bindPopup('<b>TOKO BERKAT ABADI</b><br/>Kelinjau Ulu, Kec. Muara Ancalong, Kabupaten Kutai Timur, Kalimantan Timur 75556<br>085820618596<br><br> <img src="./pedagang/TOKOBERKATABADI1.png" style="width:200px"> <img src="./pedagang/TOKOBERKATABADI2.png" style="width:200px"> <img src="./pedagang/TOKOBERKATABADI3.png" style="width:200px">');
+
+const TokoMaria = L.marker([0.44142739987464386, 116.71821979522612], {icon: WarungSembakoIcon})
+.bindPopup('<b>Toko Maria</b><br/>Muara Bengkal Ilir, Kec. Muara Bengkal, Kabupaten Kutai Timur, Kalimantan Timur 75556<br>081230864049<br><br> <img src="./pedagang/TokoMaria2.png" style="width:200px"> ');
+
+const TokoCahayaKembar = L.marker([0.44594142969018036, 116.7149401873732], {icon: WarungSembakoIcon})
+.bindPopup('<b>Toko Cahaya Kembar</b><br/>Jl. Muara Bengkal Raya, Muara Bengkal Ilir, Kec. Muara Bengkal, Kabupaten Kutai Timur, Kalimantan Timur 75556<br><br> <img src="./pedagang/TokoCahayaKembar1.png" style="width:200px"> <img src="./pedagang/TokoCahayaKembar2.png" style="width:200px">');
+
+const KIOSTIWI = L.marker([0.46305877127965245, 116.7507933681616], {icon: WarungSembakoIcon})
+.bindPopup('<b>KIOS TIWI</b><br/>Jl. Pemilu, Benua Baru, Kec. Muara Bengkal, Kabupaten Kutai Timur, Kalimantan Timur 75654<br><br> <img src="./pedagang/KIOSTIWI1.png" style="width:200px"> <img src="./pedagang/KIOSTIWI2.png" style="width:200px">');
+
+const TokoSPGKiloEnamBB = L.marker([0.4620568793744365, 116.78827180069742], {icon: WarungSembakoIcon})
+.bindPopup('<b>Toko SPG Kilo Enam BB</b><br/>RT.16/RW. Jl. Kilo, Benua Baru, Kec. Muara Bengkal, Kutai Timur, Kalimantan Timur 74565<br>085353545557<br><br> <img src="./pedagang/TokoSPGKiloEnamBB1.png" style="width:200px"> <img src="./pedagang/TokoSPGKiloEnamBB2.png" style="width:200px">');
+
+const TokoJambolIdan = L.marker([0.3511784035295853, 116.86747237865507], {icon: WarungSembakoIcon})
+.bindPopup('<b>Toko Jambol Idan</b><br/>Ngayau, Kec. Muara Bengkal, Kabupaten Kutai Timur, Kalimantan Timur 75654<br>082255324708<br><br> <img src="./pedagang/TokoJambolIdan.png" style="width:200px"> ');
+
+const WarungRaken = L.marker([0.840831723953177, 116.81250841908665], {icon: WarungSembakoIcon})
+.bindPopup('<b>Warung Raken</b><br/>Marah Haloq, Kec. Telen, Kabupaten Kutai Timur, Kalimantan Timur 75555<br><br> <img src="./pedagang/WarungRaken.png" style="width:200px"> ');
+
+const TokoEling = L.marker([0.8756318257816588, 116.87012234617337], {icon: WarungSembakoIcon})
+.bindPopup('<b>Toko Eling</b><br/>Juk Ayak, Kec. Telen, Kabupaten Kutai Timur, Kalimantan Timur 75555<br><br> <img src="./pedagang/TokoEling.png" style="width:200px"> ');
+
+const SamuelCell = L.marker([0.8852803292904429, 116.86342159083469], {icon: WarungSembakoIcon})
+.bindPopup('<b>Twenty Maelo (Samuel Cell)</b><br/>Juk Ayak, Kec. Telen, Kabupaten Kutai Timur, Kalimantan Timur 75555<br>082348533580<br><br> <img src="./pedagang/SamuelCell1.png" style="width:200px"> <img src="./pedagang/SamuelCell2.png" style="width:200px"> <img src="./pedagang/SamuelCell3.png" style="width:200px">');
+
+const KiosRima = L.marker([0.8930878132062956, 116.85745292320885], {icon: WarungSembakoIcon})
+.bindPopup('<b>Kios Rima</b><br/>RT.07, Muara Pantun, Kec. Telen, Kabupaten Kutai Timur, Kalimantan Timur 75555<br><br> <img src="./pedagang/KiosRima.png" style="width:200px"> ');
+
+const TokoCeria = L.marker([0.8746388234829495, 117.168355276979], {icon: WarungSembakoIcon})
+.bindPopup('<b>Toko Ceria</b><br/>Jl. Ahmad Yani, Tepian Indah, Kec. Bengalon, Kabupaten Kutai Timur, Kalimantan Timur 75618<br><br> <img src="./pedagang/TokoCeria1.png" style="width:200px"> <img src="./pedagang/TokoCeria2.png" style="width:200px">');
+
+const TOKOLESTARIKURIKUDUNG = L.marker([0.874651829766492, 117.16570529418914], {icon: WarungSembakoIcon})
+.bindPopup('<b>TOKO LESTARI KURI KUDUNG</b><br/>Jl. Ahmad Yani, Tepian Indah, Kec. Bengalon, Kabupaten Kutai Timur, Kalimantan Timur 75618<br><br> <img src="./pedagang/TOKOLESTARIKURIKUDUNG.png" style="width:200px"> ');
+
+const SRCNetral = L.marker([0.8830820674648263, 117.15000606971981], {icon: WarungSembakoIcon})
+.bindPopup('<b>SRC Netral</b><br/>Jl. Ahmad Yani, Tepian Indah, Kec. Bengalon, Kabupaten Kutai Timur, Kalimantan Timur 75618<br><br> <img src="./pedagang/SRCNetral.png" style="width:200px"> ');
+
+const TokoBerkatDoa = L.marker([0.8636172598937198, 117.21673844576698], {icon: WarungSembakoIcon})
+.bindPopup('<b>Toko Berkat Doa</b><br/>Jl. Ahmad Yani, Tepian Indah, Kec. Bengalon, Kabupaten Kutai Timur, Kalimantan Timur 75618<br><br> <img src="./pedagang/TokoBerkatDoa.png" style="width:200px"> ');
+
+const TokoAnugrah = L.marker([0.8623607622467004, 117.21620344308339], {icon: WarungSembakoIcon})
+.bindPopup('<b>Toko Anugrah</b><br/>Jl. Ahmad Yani, Tepian Indah, Kec. Bengalon, Kabupaten Kutai Timur, Kalimantan Timur 75618<br><br> <img src="./pedagang/TokoAnugrah.png" style="width:200px"> ');
+
+const TokoAgnesSukotjo = L.marker([0.7985787786435268, 117.23589102157445], {icon: WarungSembakoIcon})
+.bindPopup('<b>Toko Agnes Sukotjo</b><br/>KM 125, Tepian Langsat, Kec. Bengalon, Kabupaten Kutai Timur, Kalimantan Timur 75618<br><br> <img src="./pedagang/TokoAgnesSukotjo.png" style="width:200px"> ');
+
+const TokoPutriBulan = L.marker([0.792347866438635, 117.23820657056962], {icon: WarungSembakoIcon})
+.bindPopup('<b>Toko Putri Bulan</b><br/>Tepian Makmur, Kec. Rantau Pulung, Kabupaten Kutai Timur, Kalimantan Timur 75618<br><br> <img src="./pedagang/TokoPutriBulan.png" style="width:200px"> ');
+
+const JayaMakmurGrosirMart = L.marker([0.7356439308826355, 117.27760872864904], {icon: WarungSembakoIcon})
+.bindPopup('<b>Jaya Makmur Grosir Mart</b><br/>Jl. Ahmad Yani, Pulung Sari, Kec. Rantau Pulung, Kabupaten Kutai Timur, Kalimantan Timur 75683<br><br> <img src="./pedagang/JayaMakmurGrosirMart.png" style="width:200px"> ');
+
+const TokoMekarSejahtera = L.marker([0.7123351892051071, 117.28912482914252], {icon: WarungSembakoIcon})
+.bindPopup('<b>Toko Mekar Sejahtera</b><br/>Jl. Poros Muara Wahau, Pulung Sari, Kec. Rantau Pulung, Kabupaten Kutai Timur, Kalimantan Timur 75683<br><br> <img src="./pedagang/TokoMekarSejahtera.png" style="width:200px"> ');
+
+const TOKOHSJAYA = L.marker([0.7117399357112232, 117.28953507738838], {icon: WarungSembakoIcon})
+.bindPopup('<b>TOKO HS JAYA</b><br/>Pulung Sari, Kec. Rantau Pulung, Kabupaten Kutai Timur, Kalimantan Timur<br><br> <img src="./pedagang/TOKOHSJAYA.png" style="width:200px"> ');
+
+const DYMARKM110 = L.marker([0.7118631466784613, 117.28952046645038], {icon: WarungSembakoIcon})
+.bindPopup('<b>DYMAR KM110</b><br/>Pulung Sari, Kec. Rantau Pulung, Kabupaten Kutai Timur, Kalimantan Timur<br><br> <img src="./pedagang/DYMARKM110.png" style="width:200px"> ');
+
+const TokoBiss = L.marker([0.7120191650211461, 117.28942474150031], {icon: WarungSembakoIcon})
+.bindPopup('<b>Toko Biss</b><br/>Pulung Sari, Kec. Rantau Pulung, Kabupaten Kutai Timur, Kalimantan Timur<br><br> <img src="./pedagang/TokoBiss.png" style="width:200px"> ');
+
+const TokoDwiLestari = L.marker([0.7109989669007946, 117.28932286392566], {icon: WarungSembakoIcon})
+.bindPopup('<b>Toko Dwi Lestari</b><br/>Pulung Sari, Kec. Rantau Pulung, Kabupaten Kutai Timur, Kalimantan Timur 75683<br>081347116876<br><br> <img src="./pedagang/TokoDwiLestari.png" style="width:200px"> ');
+
+const TokoNurAbadi = L.marker([0.7111951836065763, 117.28902725946062], {icon: WarungSembakoIcon})
+.bindPopup('<b>Toko Nur Abadi</b><br/>Pulung Sari, Kec. Rantau Pulung, Kabupaten Kutai Timur, Kalimantan Timur 75683<br>081347617086<br><br> <img src="./pedagang/TokoNurAbadi.png" style="width:200px"> ');
+
+const BandiSayurSangatta = L.marker([0.7104443298118863, 117.28925720607485], {icon: WarungSembakoIcon})
+.bindPopup('<b>Bandi Sayur Sangatta</b><br/>Jl. Poros Muara Wahau, Pulung Sari, Kec. Rantau Pulung, Kabupaten Kutai Timur, Kalimantan Timur 75683<br><br> <img src="./pedagang/BandiSayurSangatta.png" style="width:200px"> ');
+
+const TOKOSYAYA = L.marker([0.6984813134056432, 117.29625531050391], {icon: WarungSembakoIcon})
+.bindPopup('<b>TOKO SYAYA</b><br/>Tepian Baru, Kec. Rantau Pulung, Kabupaten Kutai Timur, Kalimantan Timur 75683<br><br> <img src="./pedagang/TOKOSYAYA.png" style="width:200px"> ');
+
+const TOKOKhusnul = L.marker([0.698598323495894, 117.29606504046815], {icon: WarungSembakoIcon})
+.bindPopup('<b>Toko Khusnul</b><br/>Manunggal Jaya, Kec. Rantau Pulung, Kabupaten Kutai Timur, Kalimantan Timur<br><br> <img src="./pedagang/TOKOKhusnul1.png" style="width:200px"> <img src="./pedagang/TOKOKhusnul2.png" style="width:200px">');
+
+const LESTARIOLSHOP = L.marker([0.6925526058943917, 117.29707119013244], {icon: WarungSembakoIcon})
+.bindPopup('<b>LESTARI OLSHOP</b><br/>Jl. Poros Muara Wahau Tepian Baru No.KM 110, RT.20/RW/RW.Dusun 01, Tepian Baru, Kec. Bengalon, Kabupaten Kutai Timur, Kalimantan Timur 75683<br>081231876434<br><br> <img src="./pedagang/LESTARIOLSHOP.png" style="width:200px"> ');
+
+const KEYMART = L.marker([0.6688943991886445, 117.30562444958541], {icon: WarungSembakoIcon})
+.bindPopup('<b>KEY MART</b><br/>Tepian Indah KM 106, Manunggal Jaya, Kec. Bengalon, Kabupaten Kutai Timur, Kalimantan Timur 75653<br>085393911222<br><br> <img src="./pedagang/KEYMART.png" style="width:200px"> ');
+
+const TokoJusmanJalanPoros = L.marker([0.6994619918513855, 117.29554479410635], {icon: WarungSembakoIcon})
+.bindPopup('<b>Toko Jusman Jalan Poros Bengalon - Wahau</b><br/>Manunggal Jaya, Kec. Rantau Pulung, Kabupaten Kutai Timur, Kalimantan Timur 75683<br><br> <img src="./pedagang/TokoJusmanJalanPoros.png" style="width:200px"> ');
+
+const WarungSembakoMurahBerkah = L.marker([0.7017962370612917, 117.29470881124493], {icon: WarungSembakoIcon})
+.bindPopup('<b>Warung Sembako Murah & Berkah "Muhammad Rendi"</b><br/>Manunggal Jaya, Kec. Rantau Pulung, Kabupaten Kutai Timur, Kalimantan Timur<br><br> <img src="./pedagang/WarungSembakoMurahBerkah.png" style="width:200px"> ');
+
+const TokoRoja106 = L.marker([0.6681907192311094, 117.30523692454992], {icon: WarungSembakoIcon})
+.bindPopup('<b>Toko Roja 106</b><br/>Tepian Indah No.KM 106, Manunggal Jaya, Kec. Bengalon, Kabupaten Kutai Timur, Kalimantan Timur 75683<br><br> <img src="./pedagang/TokoRoja106.png" style="width:200px"> ');
+
+const TokoFarahDanFakhira = L.marker([0.6630488282723033, 117.30467467191075], {icon: WarungSembakoIcon})
+.bindPopup('<b>Toko Farah Dan Fakhira</b><br/>Jalan Poros, Manunggal Jaya, Rantau Pulung, Kabupaten Kutai Timur, Kalimantan Timur 75683<br><br> <img src="./pedagang/TokoFarahDanFakhira.png" style="width:200px"> ');
+
+const TOKODYMAR97 = L.marker([0.6648653752732625, 117.3781419565976], {icon: WarungSembakoIcon})
+.bindPopup('<b>TOKO DYMAR 97</b><br/>Jl. Ahmad Yani, Margo Mulyo, Kec. Rantau Pulung, Kabupaten Kutai Timur, Kalimantan Timur 75618<br>081352265879<br><br> <img src="./pedagang/TOKODYMAR97.png" style="width:200px"> ');
+
+const TokoSembakoAhmadJaya = L.marker([0.6988798143930637, 117.53572343430545], {icon: WarungSembakoIcon})
+.bindPopup('<b>Toko Sembako Ahmad Jaya</b><br/>Tepian Langsat, Kec. Bengalon, Kabupaten Kutai Timur, Kalimantan Timur 75618<br>082155537545<br><br> <img src="./pedagang/TokoSembakoAhmadJaya.png" style="width:200px"> ');
+
+const TokoIbuSurati = L.marker([0.7368285543108553, 117.54518320314722], {icon: WarungSembakoIcon})
+.bindPopup('<b>Toko Ibu Surati</b><br/>Jl. Mulawarman, Sepaso Bar., Kec. Bengalon, Kabupaten Kutai Timur, Kalimantan Timur 75618<br><br> <img src="./pedagang/TokoIbuSurati.png" style="width:200px"> ');
+
+const TokoAnjasJaya = L.marker([0.7501649062104628, 117.55212522333221], {icon: WarungSembakoIcon})
+.bindPopup('<b>Toko Anjas Jaya</b><br/>Sepaso, Kec. Bengalon, Kabupaten Kutai Timur, Kalimantan Timur<br><br> <img src="./pedagang/TokoAnjasJaya.png" style="width:200px"> ');
+
+const TOKOALIFBENGALON = L.marker([0.7538071101305674, 117.55629853172422], {icon: WarungSembakoIcon})
+.bindPopup('<b>TOKO ALIF BENGALON</b><br/>Jl. Mulawarman, Sepaso, Kec. Bengalon, Kabupaten Kutai Timur, Kalimantan Timur 75618<br><br> <img src="./pedagang/TOKOALIFBENGALON.png" style="width:200px"> ');
+
+const SyifaMandiri = L.marker([0.7546781495596456, 117.55696587768146], {icon: WarungSembakoIcon})
+.bindPopup('<b>Syifa Mandiri</b><br/>Sepaso, Kec. Bengalon, Kabupaten Kutai Timur, Kalimantan Timur 75618<br><br> <img src="./pedagang/SyifaMandiri.png" style="width:200px"> ');
+
+const PrimaCitra = L.marker([0.7554025678927105, 117.55793725001924], {icon: WarungSembakoIcon})
+.bindPopup('<b>Toko UD. Prima Citra (tk. Tamah)</b><br/>Jl. Mulawarman, Sepaso, Kec. Bengalon, Kabupaten Kutai Timur, Kalimantan Timur 75618<br>081348865279<br><br> <img src="./pedagang/PrimaCitra.png" style="width:200px"> ');
+
+const DivaMartBengalon = L.marker([0.7536074574312974, 117.56594704122949], {icon: WarungSembakoIcon})
+.bindPopup('<b>Diva Mart Bengalon</b><br/>Bambu kuning, Kec. Bengalon, Kabupaten Kutai Timur, Kalimantan Timur 75618<br>081216216955<br><br> <img src="./pedagang/DivaMartBengalon.png" style="width:200px"> ');
+
+const TokoAbil = L.marker([0.7500375193996659, 117.56918082300704], {icon: WarungSembakoIcon})
+.bindPopup('<b>Toko Abil</b><br/>Jl. 10 November, Sepaso, Kec. Bengalon, Kabupaten Kutai Timur, Kalimantan Timur 75618<br>085821425749<br><br> <img src="./pedagang/TokoAbil.png" style="width:200px"> ');
+
+const TokoSiti = L.marker([0.7449928472086617, 117.57017384626215], {icon: WarungSembakoIcon})
+.bindPopup('<b>Toko Bu Siti</b><br/>Jl. 10 November, Sepaso, Kec. Bengalon, Kabupaten Kutai Timur, Kalimantan Timur 75618<br><br> <img src="./pedagang/TokoSiti.png" style="width:200px"> ');
+
+const TokoDysa = L.marker([0.7424780089952515, 117.58442732813796], {icon: WarungSembakoIcon})
+.bindPopup('<b>Toko Dysa</b><br/>Jl. Awang Long, Sepaso Sel., Kec. Bengalon, Kabupaten Kutai Timur, Kalimantan Timur 75618<br><br> <img src="./pedagang/TokoDysa.png" style="width:200px"> ');
+
+const TokoIraJaya = L.marker([0.742688022891251, 117.58463310587874], {icon: WarungSembakoIcon})
+.bindPopup('<b>Toko Ira Jaya</b><br/>Sepaso Sel., Kec. Bengalon, Kabupaten Kutai Timur, Kalimantan Timur<br><br> <img src="./pedagang/TokoIraJaya.png" style="width:200px"> ');
+
+const TokoAlgaviBengalon = L.marker([0.7516466946218566, 117.57616170067948], {icon: WarungSembakoIcon})
+.bindPopup('<b>Toko Algavi Bengalon</b><br/>Jl. Mulawarman, Sepaso, Kec. Bengalon, Kabupaten Kutai Timur, Kalimantan Timur 75618<br>081351856989<br><br> <img src="./pedagang/TokoAlgaviBengalon.png" style="width:200px"> ');
+
+const TokoYuni = L.marker([0.7517043571519522, 117.57637225408952], {icon: WarungSembakoIcon})
+.bindPopup('<b>Toko Yuni</b><br/>Sepaso, Kec. Bengalon, Kabupaten Kutai Timur, Kalimantan Timur 75618<br><br> <img src="./pedagang/TokoYuni.png" style="width:200px"> ');
+
+const WARUNGIBUHASMI = L.marker([0.7939289971888763, 116.56672709360754], {icon: WarungSembakoIcon})
+.bindPopup('<b>WARUNG IBU HASMI</b><br/>Long Pejeng, Kec. Busang, Kabupaten Kutai Timur, Kalimantan Timur 75556<br>08213355416<br><br> <img src="./pedagang/WARUNGIBUHASMI.png" style="width:200px"> ');
+
+const TokoAlamPejeng = L.marker([0.789655308515546, 116.56984219717829], {icon: WarungSembakoIcon})
+.bindPopup('<b>Toko Alam Pejeng</b><br/>Long Pejeng, Kec. Busang, Kabupaten Kutai Timur, Kalimantan Timur 75556<br>081350386610<br><br> <img src="./pedagang/TokoAlamPejeng.png" style="width:200px"> ');
+
+const AslikahJaya = L.marker([1.3485497323187008, 117.72412118037475], {icon: WarungSembakoIcon})
+.bindPopup('<b>Aslikah Jaya</b><br/>Batu Lepoq, Kec. Karangan, Kabupaten Kutai Timur, Kalimantan Timur 75684<br><br> <img src="./pedagang/AslikahJaya.png" style="width:200px"> ');
+
+const TokoAnandaFirman = L.marker([1.354738954244442, 117.66423529440529], {icon: WarungSembakoIcon})
+.bindPopup('<b>Toko Ananda/Firman</b><br/>Karangan Hilir, Kec. Karangan, Kabupaten Kutai Timur, Kalimantan Timur 75684<br>081253755591<br><br> <img src="./pedagang/TokoAnandaFirman.png" style="width:200px"> ');
+
+const TokoSuryaIndah = L.marker([1.3520932116292472, 117.65828740807629], {icon: WarungSembakoIcon})
+.bindPopup('<b>Toko Surya Indah</b><br/>Karangan Hilir, Karangan dalam, Kec. Karangan, Kabupaten Kutai Timur, Kalimantan Timur 75684<br><br> <img src="./pedagang/TokoSuryaIndah.png" style="width:200px"> ');
+
+const TokoMamaNufus = L.marker([1.351004051951593, 117.65836703152509], {icon: WarungSembakoIcon})
+.bindPopup('<b>Toko Mama Nufus</b><br/>Jl. Poros Pangeran Antasari No.RT.01, Karangan Hilir, Kec. Karangan, Kabupaten Kutai Timur, Kalimantan Timur 75684<br>085350494040<br><br> <img src="./pedagang/TokoMamaNufus.png" style="width:200px"> ');
+
+const TokoPutriKharisa = L.marker([1.3497089663693995, 117.6576024203873], {icon: WarungSembakoIcon})
+.bindPopup('<b>Toko Putri Kharisa</b><br/>Jl. Poros Provinsi RT 02 Desa Karangan Sebrang, Karangan Hilir, Kec. Karangan, Kabupaten Kutai Timur, Kalimantan Timur 75684<br><br> <img src="./pedagang/TokoPutriKharisa.png" style="width:200px"> ');
+
+const MiniMarketBerkah = L.marker([1.3496362510493902, 117.65718048518741], {icon: WarungSembakoIcon})
+.bindPopup('<b>Mini Market Berkah</b><br/>Jl. Pangeran Antasari, Karangan Hilir, Kec. Karangan, Kabupaten Kutai Timur, Kalimantan Timur 75684<br>081349005285<br><br> <img src="./pedagang/MiniMarketBerkah.png" style="width:200px"> ');
+
+const SEMBAKOAZIZAHRAHMAN = L.marker([1.354176424202324, 117.65498987726107], {icon: WarungSembakoIcon})
+.bindPopup('<b>SEMBAKO AZIZAH RAHMAN Grosir-Eceran</b><br/>Karangan Hilir, Kec. Karangan, Kabupaten Kutai Timur, Kalimantan Timur 75684<br>085246772552<br><br> <img src="./pedagang/SEMBAKOAZIZAHRAHMAN1.png" style="width:200px"> <img src="./pedagang/SEMBAKOAZIZAHRAHMAN2.png" style="width:200px"> ');
+
+const TokoMajuJaya = L.marker([1.358679275079111, 117.6569112611064], {icon: WarungSembakoIcon})
+.bindPopup('<b>Toko Maju Jaya, Agen BRILINK, ATK dan Seragam Sekolah</b><br/>Jl. WR Supratman No.RT. 005, Karangan Hilir, Kec. Karangan, Kabupaten Kutai Timur, Kalimantan Timur 75684<br>081253792266<br><br> <img src="./pedagang/TokoMajuJaya1.png" style="width:200px"> <img src="./pedagang/TokoMajuJaya2.png" style="width:200px"> ');
+
+const TokoElenkPengadan = L.marker([1.2526065725603346, 117.75570911503716], {icon: WarungSembakoIcon})
+.bindPopup('<b>Toko Elenk Pengadan</b><br/>Pengadan, Kec. Karangan, Kabupaten Kutai Timur, Kalimantan Timur 75684<br>082255658922<br><br> <img src="./pedagang/TokoElenkPengadan.png" style="width:200px"> ');
+
+const TokoMuliaTokoBiru = L.marker([0.8692211161760272, 117.86589158893642], {icon: WarungSembakoIcon})
+.bindPopup('<b>Toko Mulia / Toko Biru</b><br/>Bukit Harapan, Kec. Kaliorang, Kabupaten Kutai Timur, Kalimantan Timur 75618<br>081314988660<br><br> <img src="./pedagang/TokoMuliaTokoBiru1.png" style="width:200px"> <img src="./pedagang/TokoMuliaTokoBiru2.png" style="width:200px">');
+
+const WarungSayurMarsyat = L.marker([0.8693358824418567, 117.866260123509], {icon: WarungSembakoIcon})
+.bindPopup('<b>Warung Sayur Marsyat</b><br/>Jl. Asahan No.25, RT.04, Bukit Harapan, Kec. Kaliorang, Kabupaten Kutai Timur, Kalimantan Timur 75618<br><br> <img src="./pedagang/WarungSayurMarsyat.png" style="width:200px"> ');
+
+const TokoKalijaga = L.marker([0.8705295880275161, 117.86617554838881], {icon: WarungSembakoIcon})
+.bindPopup('<b>Toko Kalijaga</b><br/>Bukit Harapan, Kec. Kaliorang, Kabupaten Kutai Timur, Kalimantan Timur 75618<br><br> <img src="./pedagang/TokoKalijaga.png" style="width:200px"> ');
+
+const AnugerahTobakuKaliorang = L.marker([0.877050965266004, 117.87000524983658], {icon: WarungSembakoIcon})
+.bindPopup('<b>Anugerah Tobaku Kaliorang</b><br/>Bangun Jaya, Kec. Kaliorang, Kabupaten Kutai Timur, Kalimantan Timur 75618<br>081395000445<br><br> <img src="./pedagang/AnugerahTobakuKaliorang.png" style="width:200px"> ');
+
+const TOKORIKY = L.marker([0.8773665771582493, 117.8685954521933], {icon: WarungSembakoIcon})
+.bindPopup('<b>TOKO RIKY (SEMBAKO & BANGUNAN)</b><br/>Jl. Poros Maloy, Bangun Jaya, Kec. Kaliorang, Kabupaten Kutai Timur, Kalimantan Timur 75684<br><br> <img src="./pedagang/TOKORIKY.png" style="width:200px"> ');
+
+const RaditaJaya = L.marker([0.877396137441467, 117.86604939042904], {icon: WarungSembakoIcon})
+.bindPopup('<b>Radita Jaya</b><br/>Bangun Jaya, Kec. Kaliorang, Kabupaten Kutai Timur, Kalimantan Timur 75618<br><br> <img src="./pedagang/RaditaJaya.png" style="width:200px"> ');
+
+const WarungTuguBHJ = L.marker([0.6809355125062391, 116.89575191974117], {icon: WarungSembakoIcon})
+.bindPopup('<b>Warung Tugu BHJ</b><br/>Himba Lestari, Batu Ampar, Kabupaten Kutai Timur, Kalimantan Timur 75654<br><br> <img src="./pedagang/WarungTuguBHJ1.png" style="width:200px"> <img src="./pedagang/WarungTuguBHJ2.png" style="width:200px">');
+
+const TokoMiraJaya = L.marker([0.680155707747827, 116.89438458972207], {icon: WarungSembakoIcon})
+.bindPopup('<b>Toko Mira Jaya</b><br/>Desa No.RT 3, Beno Harapan, Kec. Batu Ampar, Kabupaten Kutai Timur, Kalimantan Timur 75654<br>087716519290<br><br> <img src="./pedagang/TokoMiraJaya.png" style="width:200px"> ');
+
+const WarungMagelang = L.marker([0.6800269228975413, 116.8976196550874], {icon: WarungSembakoIcon})
+.bindPopup('<b>Warung Magelang</b><br/>Beno Harapan, Kec. Batu Ampar, Kabupaten Kutai Timur, Kalimantan Timur 75654<br>085752042705<br><br> <img src="./pedagang/WarungMagelang.png" style="width:200px"> ');
+
+const TokoSembakoMurniJaya = L.marker([0.7056423660503065, 117.10948636660731], {icon: WarungSembakoIcon})
+.bindPopup('<b>Toko Sembako Murni Jaya</b><br/>Jalan Poros Rantau Pulung Batu Ampar No.Desa, Himba Lestari, Kec. Rantau Pulung, Kabupaten Kutai Timur, Kalimantan Timur 75654<br>082157946206<br><br> <img src="./pedagang/TokoSembakoMurniJaya.png" style="width:200px"> ');
+
+const WarungJayaMamaMia = L.marker([0.7077742379015171, 117.1241143579352], {icon: WarungSembakoIcon})
+.bindPopup('<b>Warung Jaya Mama Mia</b><br/>Tepian Makmur, Kec. Rantau Pulung, Kabupaten Kutai Timur, Kalimantan Timur 75683<br>082252513680<br><br> <img src="./pedagang/WarungJayaMamaMia.png" style="width:200px"> ');
 
 
 
 
 
-const pedagang = L.layerGroup([TokoSEMBAKOMEGABUANA, TokoDd, TokoIsmiJaya, KiosBuahErsyaJaya, UDNekatJaya, PenjualIkanCahayaWajo, TokoTunasJaya, TokoDayaPutra, WarungSayurNaon, TokoSinarWajo11, TokoKomang, TokoOdi, TokoAulia, Wulan, TokoShelaJayaMart, UdingCell, TokoMajeni, TokoTulungAgung, TokoSembakoVinniJaya, TokoETHAN, TokoFajarSari, GlenMart, EramartSwalayanSangatta1, WarungSembakoKembar, TokoSembakoHjHalimah, WarungSembakoIP, TokoBuSumSangkulirang, TokoSembakoDeTin, ALMIRAMINIMARKET, ERAMARTBengalon, TokoSembakoRahmi, ZMartBaiturrahman, TokoPanoramaIndah, TokoMerdeka1, TokoSembakoSayurZikri, TokoSembakoNabila, TokoTOP88, MJMARTMuaraWahau, TokoSembakoAnjani, TokoToro, TokoSembakoCakrawala, TOKOSEMBAKOTABINDALINK, TokoHasna, TokoDewiPdc, TokoToni, UDMEKARJAYA, TokoArtoMoro, NurjayaCell, UmmulCell, TokoAgus, TokoSRCRIFQY, TokoSumberRejeki, TokoHjBadariah, TokoAggi, TokoPakMin, TokoHanizaLongMesangat, TokoMaudy, TokoFatin, TokoZabdan, TOKOSEDERHANA, KAMILATOKOSEMBAKO, TOKOMAIDAJAYA, KIOSWAHYU, ANIZABUAH, TokoTigaDara, TokoFADILJAYASP1, KiosMamaSheza, TOKOLUMAYAN, NadiaMagelangJaya, SuburFruits, KedaiSayurKikiMekarJaya, TokoROSITA, KiosDuaPutri, TokoNayla, TOKOAFNAN, TokoLarisJayaII, TokoLarisJaya, TokoIlma, CVLANGGENGJAYABERKAH, TokoRangga, TokoAlfin, TokoChaka, TokoNurHadi, TokoBagusCell, TokoIQBAL, TokoAWANGJAYARAKA, SRCMajuJaya, TokoSayurMurah, TokoYusakJalanPoros, TokoSalmah, CahayaBelawa, RAQILRARAJAYA, ECHABARATA, TokoAmarCell, TokoFitrah, TOKOALISANADA, TokoPutri, TokoTasya, TokoFajar, AyamPotongDeltaSangkulirang, KiosIkanWistyAndira, KiosSayurAlFarizi, KiosIkanJayaAbadi, AgenTelurBlitarBerkahBersama, TokoDuaPutra, ]);
+const pedagang = L.layerGroup([TokoSEMBAKOMEGABUANA, TokoDd, TokoIsmiJaya, KiosBuahErsyaJaya, UDNekatJaya, PenjualIkanCahayaWajo, TokoTunasJaya, TokoDayaPutra, WarungSayurNaon, TokoSinarWajo11, TokoKomang, TokoOdi, TokoAulia, Wulan, TokoShelaJayaMart, UdingCell, TokoMajeni, TokoTulungAgung, TokoSembakoVinniJaya, TokoETHAN, TokoFajarSari, GlenMart, EramartSwalayanSangatta1, WarungSembakoKembar, TokoSembakoHjHalimah, WarungSembakoIP, TokoBuSumSangkulirang, TokoSembakoDeTin, ALMIRAMINIMARKET, ERAMARTBengalon, TokoSembakoRahmi, ZMartBaiturrahman, TokoPanoramaIndah, TokoMerdeka1, TokoSembakoSayurZikri, TokoSembakoNabila, TokoTOP88, MJMARTMuaraWahau, TokoSembakoAnjani, TokoToro, TokoSembakoCakrawala, TOKOSEMBAKOTABINDALINK, TokoHasna, TokoDewiPdc, TokoToni, UDMEKARJAYA, TokoArtoMoro, NurjayaCell, UmmulCell, TokoAgus, TokoSRCRIFQY, TokoSumberRejeki, TokoHjBadariah, TokoAggi, TokoPakMin, TokoHanizaLongMesangat, TokoMaudy, TokoFatin, TokoZabdan, TOKOSEDERHANA, KAMILATOKOSEMBAKO, TOKOMAIDAJAYA, KIOSWAHYU, ANIZABUAH, TokoTigaDara, TokoFADILJAYASP1, KiosMamaSheza, TOKOLUMAYAN, NadiaMagelangJaya, SuburFruits, KedaiSayurKikiMekarJaya, TokoROSITA, KiosDuaPutri, TokoNayla, TOKOAFNAN, TokoLarisJayaII, TokoLarisJaya, TokoIlma, CVLANGGENGJAYABERKAH, TokoRangga, TokoAlfin, TokoChaka, TokoNurHadi, TokoBagusCell, TokoIQBAL, TokoAWANGJAYARAKA, SRCMajuJaya, TokoSayurMurah, TokoYusakJalanPoros, TokoSalmah, CahayaBelawa, RAQILRARAJAYA, ECHABARATA, TokoAmarCell, TokoFitrah, TOKOALISANADA, TokoPutri, TokoTasya, TokoFajar, AyamPotongDeltaSangkulirang, KiosIkanWistyAndira, KiosSayurAlFarizi, KiosIkanJayaAbadi, AgenTelurBlitarBerkahBersama, TokoDuaPutra, TokoAmelMandiri, YulianaBriLink, TokoRahmaAzzam, TokoSembakoNurAnugrah, TokoBundaDijah, TokoSejahtera, TOKOBERKATABADI, TokoMaria, TokoCahayaKembar, KIOSTIWI, TokoSPGKiloEnamBB, TokoJambolIdan, WarungRaken, TokoEling, SamuelCell, KiosRima, TokoCeria, TOKOLESTARIKURIKUDUNG, SRCNetral, TokoBerkatDoa, TokoAnugrah, TokoAgnesSukotjo, TokoPutriBulan, JayaMakmurGrosirMart, TokoMekarSejahtera, TOKOHSJAYA, DYMARKM110, TokoBiss, TokoDwiLestari, TokoNurAbadi, BandiSayurSangatta, TokoJusmanJalanPoros, TOKOSYAYA, TOKOKhusnul, LESTARIOLSHOP, KEYMART, WarungSembakoMurahBerkah, TokoRoja106, TokoFarahDanFakhira, TOKODYMAR97, TokoSembakoAhmadJaya, TokoIbuSurati, TokoAnjasJaya, TOKOALIFBENGALON, SyifaMandiri, PrimaCitra, DivaMartBengalon, TokoAbil, TokoSiti, TokoDysa, TokoIraJaya, TokoAlgaviBengalon, TokoYuni, WARUNGIBUHASMI, TokoAlamPejeng, AslikahJaya, TokoAnandaFirman, TokoSuryaIndah, TokoMamaNufus, TokoPutriKharisa, MiniMarketBerkah, SEMBAKOAZIZAHRAHMAN, TokoMajuJaya, TokoElenkPengadan, TokoMuliaTokoBiru, WarungSayurMarsyat, TokoKalijaga, AnugerahTobakuKaliorang, TOKORIKY, RaditaJaya, WarungTuguBHJ, TokoMiraJaya, WarungMagelang, TokoSembakoMurniJaya, WarungJayaMamaMia, ]);
 layerControl.addOverlay(pedagang, 'Pedagang Sembako');
-
-
-
-
-
-
-
-
-
-
 
 
 
@@ -962,7 +1208,7 @@ L.Control.Watermark = L.Control.extend({
     onAdd: function(map) {
         var img = L.DomUtil.create('img');
 
-        img.src = 'Kutai_Timur.png';
+        img.src = 'icon/Kutai_Timur.png';
         img.style.width = '30px';
 
         return img;
